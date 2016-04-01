@@ -1,0 +1,38 @@
+<div class="menu-container">
+	<div class="menu-list">
+		<ul class="navigation">
+			<a><li class="navigation-items" ng-mouseover="toggleTopics()"> Topics </li></a>
+			<a><li class="navigation-items" ng-mouseover="toggleInst()"> Instructors</li></a>
+			<li class="navigation-items" ng-mouseover="toggleCoh()"> <a> Cohorts </a></li>
+			<li class="navigation-items" ng-mouseover="toggleTop()"> <a> Top Rated </a></li>
+			<li class="navigation-items" ng-mouseover="toggleAll()"> <a> All Videos </a></li>
+		</ul>
+	</div>
+
+<!-- 	<menu-display class="topics-list" ng-repeat="topic in topics">{{topics}}</menu-display> -->
+
+<!-- 		<video-list><ul><li ng-repeat="video in instructorVideos">{{video.lessontitle}}</li> </ul></video-list> -->
+
+	<ul class="topics-list" ng-show="showTopics" ng-mouseleave="toggleTopics()"><li class="display-items" ng-repeat="topic in topics" ng-click="getTopicVideos(topic)"><div>{{topic}}</div></li></ul>
+
+	<ul class="instructor-list" ng-show="showInst" ng-mouseleave="toggleInst()"><li class="display-items" ng-repeat="instructor in instructors" ng-click="getInstructorVideos(instructor)"><div>{{instructor}}</div></li></ul>
+
+	<ul class="coh-list" ng-show="showCoh" ng-mouseleave="toggleCoh()"><li class="display-items" ng-repeat="cohort in cohorts" ng-click="getCohortVideos(cohort)">{{cohort}}</li></ul>
+
+	<ul class="top-vids" ng-show="showTop" ng-mouseleave="toggleTop()"><li class="display-items" ng-repeat="video in topRated">{{video.lessontitle}}</li></ul>
+
+	<ul class="all-vids" ng-show="showAll" ng-mouseleave="toggleAll()"><li class="display-items" ng-repeat="video in videos">{{video.lessontitle}}</li></ul>
+
+<!-- 	<ul class="inst-vids-list" ng-show="showInstVids"><li class="display-items" ng-repeat="video in instructorVideos"><div>{{video.lessontitle}}</div></li></ul> -->
+	
+	<div class="vids-list-container"><a><p class="inst-vids" ng-repeat="video in topicVideos" ng-click="directToPlayer(video._id)">{{video.lessontitle}}</p></a></div>
+
+	<div class="vids-list-container"><a><p class="inst-vids" ng-repeat="video in instructorVideos" ng-click="directToPlayer(video._id)">{{video.lessontitle}}</p></a></div>
+
+	<div class="vids-list-container"><a><p class="inst-vids" ng-repeat="video in cohortVideos" ng-click="directToPlayer(video._id)">{{video.lessontitle}}</p></a></div>
+
+	<div class="vids-list-container"><a><p class="inst-vids" ng-repeat="video in topRated" ng-click="directToPlayer(video._id)">{{video.lessontitle}}</p></a></div>
+
+	<div class="vids-list-container"><a><p class="inst-vids" ng-repeat="video in videos" ng-click="directToPlayer(video._id)">{{video.lessontitle}}</p></a></div>
+
+</div>

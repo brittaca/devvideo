@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="vidInterface">
+    <head>
+        <title>DevMountain Video</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+      <body ng-controller="mainCtrl">
+
+        <h1>{{test}}</h1>
+
+          <div class="view-container" ui-view></div>
+
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+        <script type="text/javascript" src="http://content.jwplatform.com/libraries/v4GQk7Uq.js"></script>
+        <script type="text/javascript" src="./js/jwPlayerSetup.js"></script>
+        <script src="./js/app.js"></script>
+        <script src="./js/mainCtrl.js"></script>
+         <script src="./js/views/login/loginCtrl.js"></script>
+         <script src="./js/views/login/loginService.js"></script>
+        <script src="./js/directives/menuDisplay/menuDisplay.js"></script>
+        <script src="./js/directives/searchMenu/searchMenu.js"></script>
+        <script src="./js/views/search/searchCtrl.js"></script>
+        <script src="./js/directives/searchMenu/searchMenuService.js"></script>
+        <script src="./js/directives/navBar/navBar.js"></script>
+        <script src="./js/views/watch/watchCtrl.js"></script>
+    </body>
+</html>
