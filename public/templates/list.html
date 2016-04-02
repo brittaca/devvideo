@@ -1,0 +1,21 @@
+<nav-bar></nav-bar>
+
+<section class="list-container">
+	<div class="vids-list-container">
+		<div class="inst-vids" ng-repeat="video in topicVideos">
+			<div><a href="{{video.vimeoLink}}" target="_blank">{{video.lessontitle}}</a>
+			<select ng-options="option for option in optionsList" ng-model="rating" ng-change="rateVideo(video, rating)">
+			</select>
+			<span>{{video.currUserRating}}</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- <div class="vids-list-container"><a><p class="inst-vids" ng-repeat="video in instructorVideos" ng-click="directToPlayer(video._id)">{{video.lessontitle}}</p></a></div>
+
+	<div class="vids-list-container"><a><p class="inst-vids" ng-repeat="video in cohortVideos" ng-click="directToPlayer(video._id)">{{video.lessontitle}}</p></a></div>
+
+	<div class="vids-list-container"><a><p class="inst-vids" ng-repeat="video in topRated" ng-click="directToPlayer(video._id)">{{video.lessontitle}}</p></a></div>
+
+	<div class="vids-list-container"><a><p class="inst-vids" ng-repeat="video in videos" ng-click="directToPlayer(video._id)">{{video.lessontitle}}</p></a></div> -->
+</section>

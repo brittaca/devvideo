@@ -1,4 +1,4 @@
-angular.module('vidInterface')
+angular.module('devvideo')
 
 .service('dashService', function($http) {
 

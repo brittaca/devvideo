@@ -20,15 +20,15 @@ var videoSchema = new schema({
 	topics: [String],
 	ratings: [{
 		stars: {type: Number, minlength: 1, maxlength: 5},
-		user: {type: schema.Types.ObjectId, ref: User},
-		avg: {type: Number}
+		user: {type: schema.Types.ObjectId, ref: User}
 	}],
 	comments: [{
 		text: {type: String, required: true},
 		user: {type: schema.Types.ObjectId, ref: User}
 	}],
 	vimeoLink: String,
-	vimVideoId: String
+	vimVideoId: String,
+	currUserRating: Number
 })
 
 module.exports = mongoose.model('Video', videoSchema);

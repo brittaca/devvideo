@@ -5,10 +5,10 @@
       <header><div class="login-header">
       </div></header>
         <div class="login-text"> login</div>
-        <div class="login-input-box"> <input ng-model="email" class="login-input"></input></div>
+        <div class="login-input-box"> <input ng-model="email" class="login-input" placeholder="EMAIL"></input></div>
       
-        <div class="login-input-box"> <input ng-model="password" class="login-input"> </input></div>
-        <button class="login-button" ng-click="verifyUser()"> submit </button>
+        <div class="login-input-box"> <input ng-model="password" class="login-input" placeholder="PASSWORD"> </input></div>
+        <button class="login-button" ng-click="verifyUser(email, password)"> submit </button>
     </div>
   </div>
 </section>

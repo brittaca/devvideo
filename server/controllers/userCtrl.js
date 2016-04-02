@@ -24,15 +24,27 @@ module.exports = {
 	},
 
 	getUser: function(req, res) {
-		User.findById(req.query.id)
+		User.findOne({ email: req.query.email})
 		.exec( function(err, result) {
 			if (err) {
 				return res.status(500).send(err);
 			} else {
-				res.send(result);
+				req.session.user = result;
+				res.send(req.session.user);
 			}
 		})
 	},
+
+	// getCurrenUser: function(req, res) {
+	// 	Session.find(req.session.user)
+	// 	.exec( function(err, result) {
+	// 		if (err) {
+	// 			return res.status(500).send(err);
+	// 		} else {
+	// 			res.send(result);
+	// 		}
+	// 	})
+	// },
 
 	updateUser: function(req, res) {
 		User.findByIdAndUpdate(req.params.id, req.body)

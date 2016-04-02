@@ -1,36 +1,43 @@
-angular.module('vidInterface')
+angular.module('devvideo')
 
 .controller('loginCtrl', function($scope, $state, loginService) {
 
 	$scope.users = [];
 
-	$scope.email = "email";
-
-	$scope.password = "password";
-
-	$scope.getUsers = function() {
-		loginService.getUsers()
+	$scope.verifyUser = function(email, password) {
+		loginService.getUser(email)
 		.then(function(response) {
-			response.forEach(function(user) {
-				$scope.users.push(user);
-			})
+			if(response.data.password === password) {
+				$state.go('dash', {id: response.data._id})
+			}
 		})
 	}
 
-	$scope.getUsers();
 
-	$scope.verifyUser = function() {
-		for (var i = 0; i < $scope.users.length; i++) {
-			if ($scope.email === $scope.users[i].email && $scope.password === $scope.users[i].password) {
-				$scope.youMayEnter($scope.users[i]._id);
-			}
-		}
-	}
 
-	$scope.youMayEnter = function(userId) {
-		console.log('userId', userId)
-		$state.go('dash', {id: userId})
-	}
+
+	// $scope.getUsers = function() {
+	// 	loginService.getUsers()
+	// 	.then(function(response) {
+	// 		response.forEach(function(user) {
+	// 			$scope.users.push(user);
+	// 		})
+	// 	})
+	// }
+
+	// $scope.getUsers();
+
+	// $scope.verifyUser = function() {
+	// 	for (var i = 0; i < $scope.users.length; i++) {
+	// 		if ($scope.email === $scope.users[i].email && $scope.password === $scope.users[i].password) {
+	// 			$scope.youMayEnter($scope.users[i]._id);
+	// 		}
+	// 	}
+	// }
+
+	// $scope.youMayEnter = function(userId) {
+	// 	$state.go('dash', {id: userId})
+	// }
 
 	// var video = Video.get({ id: $scope.id }, function() {
 	// 	console.log(video);

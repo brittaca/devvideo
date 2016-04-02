@@ -1,10 +1,10 @@
-angular.module('vidInterface')
+angular.module('devvideo')
 
 .directive('navBar', function() {
 
 	return {
 		restrict: 'E',
-		templateUrl: './js/directives/navBar/navBar.html',
+		templateUrl: './templates/navBar.html',
 		controller: 'mainCtrl',
 		scope: {
 			instructor: '='

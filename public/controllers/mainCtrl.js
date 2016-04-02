@@ -1,6 +1,6 @@
-angular.module('vidInterface')
+angular.module('devvideo')
 
-.controller('mainCtrl', function($scope, $state, searchMenuService) {
+.controller('mainCtrl', function($scope, $state, videoService) {
 
 	$scope.test = 'Video Archives';
 
@@ -47,7 +47,7 @@ angular.module('vidInterface')
 	};
 
 	$scope.getVideos = function() {
-		searchMenuService.getVideos()
+		videoService.getVideos()
 		.then(function(response) {
 			response.forEach(function(video) {
 				$scope.videos.push(video);
@@ -74,19 +74,19 @@ angular.module('vidInterface')
 		console.log($scope.topics);
 	}
 
-	$scope.getTopicVideos = function(topic) {
-		$state.go('search');
-			var topicVideos = [];
-		$scope.videos.forEach(function(video) {
-			for(var i = 0; i < video.topics.length; i++) {
-				if(topic === video.topics[i] && topicVideos.indexOf(video) === -1) {
-					topicVideos.push(video)
-				}
-			}
-		})
-		$scope.topicVideos = topicVideos;
-		console.log($scope.topicVideos);
-	}
+	// $scope.getTopicVideos = function(topic) {
+	// 	$state.go('list');
+	// 		var topicVideos = [];
+	// 	$scope.videos.forEach(function(video) {
+	// 		for(var i = 0; i < video.topics.length; i++) {
+	// 			if(topic === video.topics[i] && topicVideos.indexOf(video) === -1) {
+	// 				topicVideos.push(video)
+	// 			}
+	// 		}
+	// 	})
+	// 	$scope.topicVideos = topicVideos;
+	// 	console.log($scope.topicVideos);
+	// }
 
 	$scope.getInstructors = function() {
 		$scope.videos.forEach(function(video) {
@@ -97,7 +97,7 @@ angular.module('vidInterface')
 	}
 
 	$scope.getInstructorVideos = function(instructor) {
-		$state.go('search');
+		$state.go('list');
 			var instructorVideos = [];
 		$scope.videos.forEach(function(video) {
 			if(instructor === video.instructor && instructorVideos.indexOf(video) === -1) {
@@ -119,10 +119,10 @@ angular.module('vidInterface')
 	}
 
 	$scope.getCohortVideos = function(cohort) {
-		$state.go('search');
+		$state.go('list');
 			var cohortVideos = [];
 		$scope.videos.forEach(function(video) {
-				if (cohortVideos.indexOf(cohortVideos[i]) === -1 && cohort === video.cohort) {
+				if (cohortVideos.indexOf(video) === -1 && cohort === video.cohort) {
 					cohortVidoes.push(video)
 				}
 		})
@@ -157,8 +157,9 @@ angular.module('vidInterface')
 		$state.go('watch', {id: videoId} )
 	}
 
-	var queryObj = {
-	cohort: 41
+	$scope.getTopicVideos = function(topic) {
+		$state.go('list', {topic: topic} )
 	}
+
 
 });
