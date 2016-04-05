@@ -1,14 +1,14 @@
 <nav-bar></nav-bar>
 
 <section class="list-container">
-	<div class="search-title"> BY TOPIC </div>
-	<div class="inst-vids" ng-repeat="video in topicVideos">
+	<div class="search-title"> BY COHORT </div>
+	<div class="inst-vids" ng-repeat="video in cohortVideos">
 
 		<div class="vid">
 			<iframe ng-src="{{video.vimPlayerLink | trustAsResourceUrl}}" width="200" height="120" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		</div>
 			<div class="vid-info">
-				<p><a href="{{video.vimeoLink}}" target="_blank">{{video.lessontitle}}</a> * <a href="https://vimeo.com/devmountainwebdev" target="_blank">DevMountain</a></p>
+				<p><a href="{{video.vimeoLink}}" target="_blank">{{video.lessontitle}}</a> * <a href="https://vimeo.com/devmountainwebdev" target="_blank">DevMountain</a> </p>
 			</div>
 
 			<div class="vid-details">

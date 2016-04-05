@@ -2,7 +2,7 @@ angular.module('devvideo')
 
 .controller('mainCtrl', function($scope, $state, videoService) {
 
-	$scope.test = 'Video Archives';
+	$scope.title = 'Video Archives';
 
 	$scope.videos = []
 
@@ -52,7 +52,6 @@ angular.module('devvideo')
 			response.forEach(function(video) {
 				$scope.videos.push(video);
 			})
-			console.log("lolo", $scope.videos);
 			$scope.getInstructors();
 			$scope.getTopics();
 			$scope.getCohorts();
@@ -71,7 +70,6 @@ angular.module('devvideo')
 				}
 			}
 		})
-		console.log($scope.topics);
 	}
 
 	// $scope.getTopicVideos = function(topic) {
@@ -85,7 +83,6 @@ angular.module('devvideo')
 	// 		}
 	// 	})
 	// 	$scope.topicVideos = topicVideos;
-	// 	console.log($scope.topicVideos);
 	// }
 
 	$scope.getInstructors = function() {
@@ -96,17 +93,16 @@ angular.module('devvideo')
 		})
 	}
 
-	$scope.getInstructorVideos = function(instructor) {
-		$state.go('list');
-			var instructorVideos = [];
-		$scope.videos.forEach(function(video) {
-			if(instructor === video.instructor && instructorVideos.indexOf(video) === -1) {
-					instructorVideos.push(video);
-			}	
-		})
-		$scope.instructorVideos = instructorVideos;
-		console.log($scope.instructorVideos);
-	}
+	// $scope.getInstructorVideos = function(instructor) {
+	// 	$state.go('list');
+	// 		var instructorVideos = [];
+	// 	$scope.videos.forEach(function(video) {
+	// 		if(instructor === video.instructor && instructorVideos.indexOf(video) === -1) {
+	// 				instructorVideos.push(video);
+	// 		}	
+	// 	})
+	// 	$scope.instructorVideos = instructorVideos;
+	// }
 
 
 	$scope.getCohorts = function() {
@@ -115,19 +111,18 @@ angular.module('devvideo')
 				$scope.cohorts.push(video.cohort);
 			}
 		})
-		console.log($scope.cohorts);
 	}
 
-	$scope.getCohortVideos = function(cohort) {
-		$state.go('list');
-			var cohortVideos = [];
-		$scope.videos.forEach(function(video) {
-				if (cohortVideos.indexOf(video) === -1 && cohort === video.cohort) {
-					cohortVidoes.push(video)
-				}
-		})
-		$scope.cohortVideos = cohortVideos;
-	}
+	// $scope.getCohortVideos = function(cohort) {
+	// 	$state.go('list');
+	// 		var cohortVideos = [];
+	// 	$scope.videos.forEach(function(video) {
+	// 			if (cohortVideos.indexOf(video) === -1 && cohort === video.cohort) {
+	// 				cohortVidoes.push(video)
+	// 			}
+	// 	})
+	// 	$scope.cohortVideos = cohortVideos;
+	// }
 
 	$scope.getAvgRatings  = function() {
 		$scope.videos.forEach(function(video) {
@@ -137,7 +132,6 @@ angular.module('devvideo')
 			}
 			$scope.ratingsAverages.push(sum/video.ratings.length);
 		})
-		console.log($scope.ratingsAverages);
 	}
 
 	$scope.getTopRated = function() {
@@ -150,7 +144,6 @@ angular.module('devvideo')
 					$scope.topRated.push(video);
 				}
 		})
-		console.log($scope.topRated);
 	}
 	
 	$scope.directToPlayer = function(videoId) {
@@ -160,6 +153,27 @@ angular.module('devvideo')
 	$scope.getTopicVideos = function(topic) {
 		$state.go('list', {topic: topic} )
 	}
+
+	$scope.getInstructorVideos = function(instructor) {
+		$state.go('instList', {instructor: instructor} )
+	}
+
+	$scope.getCohortVideos = function(cohort) {
+		$state.go('cohortList', {cohort: cohort})
+	}
+
+	$scope.getTopRatedVideos = function() {
+		$state.go('topList')
+	}
+
+	$scope.getUserRatedVideos = function() {
+		$state.go('youRated')
+	}
+
+	$scope.listAllVideos = function() {
+		$state.go('allVids')
+	}
+
 
 
 });

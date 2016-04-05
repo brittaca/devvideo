@@ -9,6 +9,25 @@ html {
 	font-family: sans-serif;
 }
 
+.title {
+	background-color: none;
+}
+
+.view-container {
+	height: 100%;
+	width: 100%;
+	background-image: url('https://images.unsplash.com/photo-1445620466293-d6316372ab59?crop=entropy&fit=crop&fm=jpg&h=950&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1925');
+	background-size: cover;
+	overflow: auto;
+}
+
+.dash-container {
+	height: 100%;
+	width: 100%;
+	background-image: url('https://images.unsplash.com/photo-1445620466293-d6316372ab59?crop=entropy&fit=crop&fm=jpg&h=950&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1925');
+	background-size: cover;
+}
+
 .page-header {
 	height: 10vh;
 	width: 100%;
@@ -17,7 +36,7 @@ html {
 	padding-left: 1%;
 }
 
-.devLogo {
+.dev-logo {
 	height: 7vh;
 	width: 7vh;
 }
@@ -88,12 +107,12 @@ html {
 
 .menu-container {
 	height: 100vh;
-	width: 20%;
-	background-color: #2AABE2;
+	width: 15%;
 	position: relative;
 	left: 0;
-	border: solid white .1vh;
 	float: left;
+	opacity: .95;
+	font-size: 1.1em;
 }
 
 .navigation {
@@ -109,15 +128,24 @@ html {
 
 .navigation-items {
     display: block;
-    background-color: #444;
+    background-color: rgba(71, 71, 71, .9);
     color: white;
     line-height: 2em;
     text-decoration: none;
-    padding: 10px 30px;
+    padding: 1vh 3vh;
+    padding-bottom: 2vh;
     width: 100%;
-    height: 5.5vh;
+    height: 5.7vh;
     position: relative;
-    /*border: solid white .1vh;*/
+}
+
+.blue-box {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background-color: #2AABE2;
+	height: 65.8vh;
+	width: 100%;
 }
 
 .display-items {
@@ -126,84 +154,142 @@ html {
     color: white;
     line-height: 2em;
     text-decoration: none;
-    padding: 10px 20px;
-    height: 5.5vh;
+    padding: 1vh 3vh;
+    padding-bottom: 1.5vh;
+    height: 5.7vh;
     width: 100%;
     position: relative;
     left: 100%;
-    border: solid gray .1vh;
+    /*border: solid gray .15vh;*/
+    opacity: .9;
 }
 
 .topics-list {
 	position: relative;
-	top: -29.2vh;
+	top: -36.7vh;
 }
 
 .instructor-list {
 	position: relative;
-	top: -23.7vh;
+	top: -31.7vh;
 }
 
 .coh-list {
 	position: relative;
-	top: -18.2vh;
-}
-
-.top-vids {
-	position: relative;
-	top: -12.7vh;
-}
-
-.all-vids {
-	position: relative;
-	top: -7.2vh;
+	top: -24.7vh;
 }
 
 .inst-vids-list {
 	position: relative;
-	top: -36.4vh;
+	top: -37vh;
 	left: 89%;
 }
 
 .list-container {
 	height: 100vh;
-	width: 70%;
-	background-color: gray;
+	width: 85%;
+	overflow: auto;
+	margin: auto;
+	padding-bottom: 3.5vh;
 }
 
-.vids-list-container {
-	width: 80%;
+.search-title {
 	position: relative;
-	top: 3vh;
-	/*border: solid #444 .5vh;*/
-	margin: auto;
+	top: 0vh;
+	right: 12%;
+	height: 5vh;
+	width: 100%;
+	text-align: right;
+	padding-top: 3vh;
+	font-size: 1.8em;
+	margin-bottom: 2vh;
+}
+
+.inst-vids a:visited {
+	color: #2AABE2;
+}
+
+.inst-vids a:link {
+	color: black;
+}
+
+.inst-vids a:hover {
+	color: white;
 }
 
 .inst-vids {
 	display: block;
-    color: blue;
-    line-height: 2em;
+	background-color: rgba(71, 71, 71, 0.55);
+    color: white;
     text-decoration: none;
-    padding-left: .7vh;
-    width: 100%;
-    height: 5vh;
-    position: relative;
-	margin: auto;
-	text-align: right;
+    font-size: 1.1em;
+    width: 63%;
+    height: 22.5vh;
+	margin: 0 auto;
+	margin-top: 3.5vh;
+	border: .4vh solid lightgray;
+	position: relative;
+	left: 7%;
+}
+
+.vid {
+	position: relative;
+	left: 2.5vh;
+	top: 2.5vh;
+	bottom: 2.5vh;
 }
 
 .video-container {
 	position: absolute;
 	left: 35%;
-	height: 100vh;
-	width: 50%;
+	height: 100%;
+	width: 100%;
 	background: lightgray;
 }
 
-.video-format {
+.vid-info {
 	position: absolute;
-	left: 10%;
-	background-color: lightgray;
-	height: 100%;
-	width: 80%;
+	left: 34vh;
+	bottom: -.1vh;
 }
+
+.ratings {
+	position: absolute;
+	right: 3vh;
+	top: 2.5vh;
+}
+
+.ratings p {
+	color: black;
+}
+
+.ratings span {
+	color: #222;
+}
+
+.logo-vids {
+	position: absolute;
+	height: 7.5vh;
+	width: 7.5vh;
+	right: 2.5vh;
+	bottom: 2.2vh;
+}
+
+.vid-details {
+	position: absolute;
+	top: 2.5vh;
+	left: 34vh;
+	height: 8vh;
+	width: 40%;
+	color: white;
+	background-color: rgba(71, 71, 71, 0.59);
+	border: solid black .4vh;
+	padding-left: 2.2vh;
+	padding-right: 2.2vh;
+	padding-bottom: 4vh;
+}
+
+.vid-details span {
+	color: black;
+}
+

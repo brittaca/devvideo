@@ -1,8 +1,8 @@
 <nav-bar></nav-bar>
 
 <section class="list-container">
-	<div class="search-title"> BY TOPIC </div>
-	<div class="inst-vids" ng-repeat="video in topicVideos">
+	<div class="search-title"> VIDEOS YOU RATED </div>
+	<div class="inst-vids" ng-repeat="video in userRatedVideos">
 
 		<div class="vid">
 			<iframe ng-src="{{video.vimPlayerLink | trustAsResourceUrl}}" width="200" height="120" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

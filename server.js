@@ -36,8 +36,14 @@ app.post('/api/video', videoCtrl.createVideo);
 app.get('/api/video', videoCtrl.getVideo);
 app.get('/api/videos', videoCtrl.getVideos);
 app.get('/api/topicvideos', videoCtrl.getTopicVideos);
+app.get('/api/instructorvideos', videoCtrl.getInstructorVideos);
+app.get('/api/cohortvideos', videoCtrl.getCohortVideos);
+app.get('/api/topratedvideos', videoCtrl.getTopRatedVideos)
+app.get('/api/uservideos', videoCtrl.getUserRatedVideos);
+app.get('/api/allvideos', videoCtrl.getAllVideos);
 app.get('/api/recentvideos', videoCtrl.getMostRecentVideos);
 app.put('/api/video', videoCtrl.updateVideo);
+app.delete('/api/video/:id', videoCtrl.deleteVideo);
 
 app.listen(port, function(){
 	console.log('listening up on port' + port);

@@ -28,6 +28,7 @@ var videoSchema = new schema({
 	}],
 	vimeoLink: String,
 	vimVideoId: String,
+	vimPlayerLink: String,
 	currUserRating: Number
 })
 
