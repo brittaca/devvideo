@@ -166,17 +166,17 @@ html {
 
 .topics-list {
 	position: relative;
-	top: -36.7vh;
+	top: -36.5vh;
 }
 
 .instructor-list {
 	position: relative;
-	top: -31.7vh;
+	top: -31.2vh;
 }
 
 .coh-list {
 	position: relative;
-	top: -24.7vh;
+	top: -25vh;
 }
 
 .inst-vids-list {
@@ -203,6 +203,7 @@ html {
 	padding-top: 3vh;
 	font-size: 1.8em;
 	margin-bottom: 2vh;
+	color: white;
 }
 
 .inst-vids a:visited {
@@ -264,14 +265,14 @@ html {
 }
 
 .ratings span {
-	color: #222;
+	color: white;
 }
 
 .logo-vids {
 	position: absolute;
 	height: 7.5vh;
 	width: 7.5vh;
-	right: 2.5vh;
+	right: 2.2vh;
 	bottom: 2.2vh;
 }
 
